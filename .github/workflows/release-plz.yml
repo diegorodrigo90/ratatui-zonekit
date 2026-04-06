@@ -37,9 +37,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
 
+  # Only tag + release AFTER a release-plz PR is merged.
+  # The release-plz `release` command is idempotent — if the version
+  # is already tagged, it does nothing. This guard prevents premature
+  # tagging on regular pushes.
   release:
     name: Tag + GitHub Release
     runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, 'chore(release)') || contains(github.event.head_commit.message, 'release-plz')
     steps:
       - uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
         with:

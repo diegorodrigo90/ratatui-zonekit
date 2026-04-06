@@ -1,5 +1,9 @@
 # ratatui-zonekit
 
+[![Crates.io](https://img.shields.io/crates/v/ratatui-zonekit.svg)](https://crates.io/crates/ratatui-zonekit)
+[![docs.rs](https://docs.rs/ratatui-zonekit/badge.svg)](https://docs.rs/ratatui-zonekit)
+[![CI](https://github.com/diegorodrigo90/ratatui-zonekit/actions/workflows/ci.yml/badge.svg)](https://github.com/diegorodrigo90/ratatui-zonekit/actions)
+[![codecov](https://codecov.io/gh/diegorodrigo90/ratatui-zonekit/graph/badge.svg)](https://codecov.io/gh/diegorodrigo90/ratatui-zonekit)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Extensible zone and plugin rendering system for [ratatui](https://ratatui.rs).**
