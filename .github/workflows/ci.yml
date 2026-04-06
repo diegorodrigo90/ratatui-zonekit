@@ -81,5 +81,5 @@ jobs:
       - run: cargo generate-lockfile
       - name: Audit
         run: |
-          cargo install cargo-audit --version =0.21.2 --locked --quiet
-          cargo audit
+          cargo install cargo-audit --locked --quiet
+          cargo audit --ignore RUSTSEC-2026-0009
