@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ZoneHint"],"struct":["RenderContext","SafeRenderer","ZoneId","ZoneRegistry","ZoneRequest","ZoneSpec"],"trait":["ZonePlugin"]};

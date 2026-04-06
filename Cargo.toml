@@ -1,0 +1,27 @@
+[package]
+name = "ratatui-zonekit"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.86.0"
+license = "MIT"
+description = "Extensible zone and plugin rendering system for ratatui — named zones, plugin-owned panes, floating overlays, safe delegation"
+repository = "https://github.com/diegorodrigo90/ratatui-zonekit"
+homepage = "https://github.com/diegorodrigo90/ratatui-zonekit"
+documentation = "https://docs.rs/ratatui-zonekit"
+keywords = ["ratatui", "tui", "plugin", "zones", "layout"]
+categories = ["command-line-interface"]
+readme = "README.md"
+authors = ["Diego Rodrigo <diegorodrigo90@gmail.com>"]
+exclude = ["assets/", "scripts/", ".github/"]
+
+[dependencies]
+ratatui = "0.30"
+
+[dev-dependencies]
+ratatui = { version = "0.30", features = ["unstable-widget-ref"] }
+
+[lints.rust]
+missing_docs = "warn"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }

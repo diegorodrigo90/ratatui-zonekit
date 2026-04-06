@@ -1,0 +1,11 @@
+pre-commit:
+  commands:
+    fmt:
+      interactive: true
+      run: cargo +nightly fmt --check
+    clippy:
+      interactive: true
+      run: RUSTFLAGS="-Dwarnings" cargo clippy --all-targets -- -D warnings
+    test:
+      interactive: true
+      run: RUSTFLAGS="-Dwarnings" cargo test
