@@ -1,1 +1,0 @@
-rd_("oratatui_zonekit")

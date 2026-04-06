@@ -1,1 +1,0 @@
-/home/diego/Projects/ratatui-zonekit/target/debug/libratatui_zonekit.rlib: /home/diego/Projects/ratatui-zonekit/src/lib.rs /home/diego/Projects/ratatui-zonekit/src/plugin.rs /home/diego/Projects/ratatui-zonekit/src/registry.rs /home/diego/Projects/ratatui-zonekit/src/render.rs /home/diego/Projects/ratatui-zonekit/src/zone.rs
