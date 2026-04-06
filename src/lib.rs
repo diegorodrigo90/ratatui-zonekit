@@ -35,7 +35,7 @@ mod registry;
 mod render;
 mod zone;
 
-pub use plugin::{RenderContext, ZonePlugin};
-pub use registry::ZoneRegistry;
+pub use plugin::{RenderContext, ZoneEvent, ZonePlugin};
+pub use registry::{RegistrationResult, ZoneRegistry};
 pub use render::SafeRenderer;
 pub use zone::{ZoneHint, ZoneId, ZoneRequest, ZoneSpec};

@@ -75,6 +75,7 @@ impl ZoneRegistry {
             });
 
             self.owners.insert(id, Arc::clone(&plugin));
+            plugin.on_register(id);
             results.push(RegistrationResult::Granted(id));
         }
 

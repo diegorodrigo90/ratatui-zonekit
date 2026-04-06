@@ -40,7 +40,12 @@ impl SafeRenderer {
         if let Ok(rendered) = result {
             rendered
         } else {
-            // Plugin panicked — render crash message in the zone
+            // Plugin panicked — clear dirty cells, then render crash message.
+            for y in area.top()..area.bottom() {
+                for x in area.left()..area.right() {
+                    buf[(x, y)].reset();
+                }
+            }
             let crash_msg = format!("[{} crashed]", plugin.id());
             let style = Style::default().fg(ratatui::style::Color::Red);
             Paragraph::new(crash_msg).style(style).render(area, buf);

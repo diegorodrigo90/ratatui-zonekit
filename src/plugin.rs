@@ -100,7 +100,10 @@ pub trait ZonePlugin: Send + Sync {
     }
 
     /// Called when the host grants a zone to this plugin.
-    fn on_register(&mut self, _zone_id: ZoneId) {}
+    ///
+    /// Uses `&self` — plugins that need to store the zone ID should
+    /// use interior mutability (e.g., `Cell`, `Mutex`).
+    fn on_register(&self, _zone_id: ZoneId) {}
 
     /// Renders the plugin's content into the granted zone.
     ///
@@ -114,7 +117,7 @@ pub trait ZonePlugin: Send + Sync {
     /// Called when a keyboard or mouse event occurs in this zone.
     ///
     /// Return `true` if the event was handled (prevents propagation).
-    fn on_event(&mut self, _zone_id: ZoneId, _event: &ZoneEvent) -> bool {
+    fn on_event(&self, _zone_id: ZoneId, _event: &ZoneEvent) -> bool {
         false
     }
 }
@@ -229,7 +232,7 @@ mod tests {
 
     #[test]
     fn default_on_event_returns_false() {
-        let mut p = TestPlugin;
+        let p = TestPlugin;
         let handled = p.on_event(
             ZoneId::new(1),
             &ZoneEvent::Key {
